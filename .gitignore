@@ -1,0 +1,14 @@
+.venv/
+.tmp/
+.repo-git/
+.yolo_config/
+runs/
+datasets/
+archive/
+*.pt
+*.onnx
+*.engine
+*.xlsx
+*.csv
+__pycache__/
+*.pyc

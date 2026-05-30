@@ -1,0 +1,13 @@
+# Replace these paths with your dataset paths.
+# Expected YOLO format:
+# dataset/
+#   images/train, images/val, images/test
+#   labels/train, labels/val, labels/test
+path: C:/path/to/your/dataset
+train: images/train
+val: images/val
+test: images/test
+
+# Replace with your class names.
+names:
+  0: class0

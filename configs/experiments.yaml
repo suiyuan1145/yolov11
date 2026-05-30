@@ -1,0 +1,42 @@
+project: runs/paper
+data: dataset.yaml
+device: 0
+seed: 42
+
+defaults:
+  epochs: 100
+  imgsz: 640
+  batch: 8
+  workers: 4
+  patience: 30
+  optimizer: auto
+  pretrained: true
+  cos_lr: true
+  close_mosaic: 10
+
+comparison:
+  - name: yolov8n_baseline
+    model: yolov8n.pt
+  - name: yolov8s_baseline
+    model: yolov8s.pt
+  - name: yolo11n_baseline
+    model: yolo11n.pt
+  - name: yolo11s_baseline
+    model: yolo11s.pt
+
+ablation:
+  - name: baseline
+    model: yolo11n.pt
+  - name: single_channel_spatial
+    model: configs/yolo11n_single_channel_spatial.yaml
+    pretrained: false
+  - name: no_pretrained
+    model: yolo11n.yaml
+    pretrained: false
+  - name: no_mosaic
+    model: yolo11n.pt
+    mosaic: 0.0
+    close_mosaic: 0
+  - name: imgsz_800
+    model: yolo11n.pt
+    imgsz: 800
